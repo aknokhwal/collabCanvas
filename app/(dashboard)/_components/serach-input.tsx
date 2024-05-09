@@ -28,6 +28,8 @@ export const SearchInput = () => {
         search: debouncedValue,
       },
     }, { skipEmptyString: true, skipNull: true });
+    
+    console.log(router)
 
     router.push(url);
   }, [debouncedValue, router]);
