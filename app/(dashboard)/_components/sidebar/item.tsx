@@ -15,6 +15,7 @@ interface ItemProps {
     imageUrl: string;
 }
 
+
 export const Item = ({
     id, 
     name, 

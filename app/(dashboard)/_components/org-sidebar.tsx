@@ -36,7 +36,7 @@ export const OrgSidebar = () => {
                     </span>
                 </div>
             </Link>
-            <OrganizationSwitcher appearance={
+            <OrganizationSwitcher hidePersonal appearance={
                 {
                     elements: {
                         rootBox: {
