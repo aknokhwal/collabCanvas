@@ -7,7 +7,7 @@ import {auth, currentUser } from "@clerk/nextjs/server";
 const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
 const liveblocks = new Liveblocks({
-    secret: "sk_dev_nuL38i_3dQQEQx-YExa6-DwaZm39j3c8fqfY0bngd2eZ8ybDToaOD0bMiUYWJWVb",
+    secret: process.env.LIVEBLOCKS_SECRET_KEY!,
 });
 
 export async function POST(request: Request) {
