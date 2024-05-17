@@ -7,6 +7,7 @@ import { Rectangle } from "./rectangle";
 import { Ellipsis } from "lucide-react";
 import { Ellipse } from "./ellipse";
 import { Text } from "./text";
+import { Note } from "./note";
 
 interface LayerPreviewProps {
     id: string;
@@ -27,6 +28,15 @@ export const LayerPreview = memo((
     if (!layer) return null;
 
     switch(layer.type){
+        case LayerType.Note:
+            return(
+                <Note
+                    id={id}
+                    layer={layer} 
+                    onPointerDown={onLayerPointerDown}
+                selectionColor = {selectionColor}
+                />
+            )
         case LayerType.Text:
             return(
                 <Text
