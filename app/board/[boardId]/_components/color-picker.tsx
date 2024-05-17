@@ -19,7 +19,7 @@ export const ColorPicker = ({
       <ColorButton color={{ r: 68, g: 202, b: 99 }} onClick={onChange} />
       <ColorButton color={{ r: 39, g: 142, b: 237 }} onClick={onChange} />
       <ColorButton color={{ r: 155, g: 105, b: 245 }} onClick={onChange} />
-      <ColorButton color={{ r: 132, g: 142, b: 242 }} onClick={onChange} />
+      <ColorButton color={{ r: 0, g: 204, b: 204 }} onClick={onChange} />
       <ColorButton color={{ r: 0, g: 0, b: 0 }} onClick={onChange} />
       <ColorButton color={{ r: 255, g: 255, b: 255 }} onClick={onChange} />
     </div>
@@ -37,11 +37,11 @@ const ColorButton = ({
 }: ColorButtonProps) => {
   return (
     <button
-      className="w-6 h-6 items-center flex justify-center hover:opacity-75 transition"
+      className="w-8 h-8 items-center flex justify-center hover:opacity-75 transition"
       onClick={() => onClick(color)}
     >
       <div 
-        className="h-6 w-6 rounded-md border border-neutral-300"
+        className="h-8 w-8 rounded-md border border-neutral-300"
         style={{ background: colorToCss(color) }}
       />
     </button>
