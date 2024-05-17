@@ -30,6 +30,7 @@ import { CursorsPresence } from "./cursors-presence";
 import { connectionIdToColor, pointerEventToCanvasPoint, resizeBounds } from "@/lib/utils";
 import { LayerPreview } from "./layer-preview";
 import { SelectionBox } from "./selection-box";
+import { SelectionTools } from "./selection-tools";
 
 interface CanvasProps {
     boardId: string;
@@ -43,7 +44,7 @@ export const Canvas = ({boardId}: CanvasProps) => {
         mode: CanvasMode.None
     })
     const [camera, setCamera] = useState<Camera>({ x: 0, y: 0});
-    const [lastUsedColor, setLastUsedState] = useState<Color>({
+    const [lastUsedColor, setLastUsedColor] = useState<Color>({
         r: 0,
         g: 0,
         b: 0,
@@ -280,6 +281,10 @@ export const Canvas = ({boardId}: CanvasProps) => {
                 canUndo={canUndo}
                 undo={history.undo}
                 redo={history.redo} 
+            />
+            <SelectionTools
+                camera = {camera}
+                setLastUsedColor = {setLastUsedColor}
             />
             <svg 
                 className="h-[100vh] w-[100vw]"
